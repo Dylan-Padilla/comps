@@ -1,5 +1,5 @@
 ---
-title: Macro– and microevolutionary insigths into the evolution of foraging behavior and the life history
+title: Macro– and microevolutionary insights into the evolution of foraging behavior and life history traits
 
 author:
 
@@ -418,14 +418,10 @@ Arrows(6.5, 3.7, 7.0, 3.7, lwd = 2, arr.type = "triangle")
 
 \justifying
 
-- We used a set of continuous-time, discrete-state Markov chain models to sample the character histories from their posterior probability distribution
+- We used a set of continuous-time, discrete-state Markov chain models
 
 - We fitted three different models to our data, using the function `make.simmap` from the `phytools` package of R v.1.0.1
 
-- We estimated the prior distribution on the root node of the tree (`pi = 'estimated'`) and sampled the transition matrix, `Q`, from its posterior distribution (`Q = 'mcmc'`).
-
-
-- We selected the most likely model of evolution based on the Akaike information criterion (AIC)
 
 ***
 
@@ -435,11 +431,6 @@ Arrows(6.5, 3.7, 7.0, 3.7, lwd = 2, arr.type = "triangle")
 
 - We used PGLS to model the relationship among maternal mass, foraging mode and reproductive output through the `gls` function from the `nlme` package of R v.3.1.153
 
-- The slope of the linear relationship can be interpreted as reproductive effort—proportion of mass allocated to reproduction—which enabled us to avoid statistical issues associated with the analysis of ratios
-
-
-- Models in which maternal mass was standardized (M) enabled us to deal with outliers, thus increasing the robustness of our conclusions
-
 
 ***
 
@@ -447,9 +438,7 @@ Arrows(6.5, 3.7, 7.0, 3.7, lwd = 2, arr.type = "triangle")
   \begincol{.48\textwidth}
 
 
-\centering
-
-![](imgs/foraging-tree.jpeg)
+![](imgs/foraging-tree.jpeg){#id .class height=115% width=115%}
 
   \endcol
 \begincol{.48\textwidth}
@@ -684,7 +673,7 @@ plot(unif, type = "p", pch = 16, col = "orange", axes = FALSE, ann = FALSE)
 
 ## Predictions
 
-```{r, out.width = "250px"}
+```{r, out.width = "280px"}
 
 energy <- c(4, 5, 6, 4, 5, 6, 3, 3, 5, 4, 4, 4)
 pheno <- c(rep("rover", 3), rep("sitter", 3), rep("rover", 3), rep("sitter", 3))
@@ -697,8 +686,6 @@ mat$energy <- as.numeric(mat$energy)
 barchart(energy ~ pheno | food, data = mat, col = c("skyblue", "purple"), ylab = "Food consumption / time", scales= list(y = list(draw = FALSE)))
 
 ```
-
-Assuming there is a GxE interaction, two possible outcomes are expected: In the left pannel, a rover genotype would comsume more food than a sitter genotype. In the right pannel, however, both rovers and sitters would consume the same amount of food
 
 # Chapter 4:
 
